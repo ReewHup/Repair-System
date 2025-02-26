@@ -64,10 +64,11 @@ const SearchResults = () => {
           <thead>
             <tr className="bg-gray-200 text-center">
               <th className="border p-2">ชื่อผู้แจ้ง</th>
-              <th className="border p-2">เลขพัสดุ</th>
+              <th className="border p-2">เลขครุภัณฑ์</th>
               <th className="border p-2">หน่วยงาน</th>
               <th className="border p-2">เบอร์โทร</th>
               <th className="border p-2">สถานะ</th>
+              <th className="border p-2">ปัญหา</th>
               <th className="border p-2">รายละเอียด</th>
               <th className="border p-2">จัดการ</th>
             </tr>
@@ -94,6 +95,7 @@ const SearchResults = () => {
                     report.status
                   )}
                 </td>
+                <td className="border p-2">{report.issue}</td>
                 <td className="border p-2">
                   {editingId === report._id ? (
                     <input

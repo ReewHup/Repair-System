@@ -26,12 +26,12 @@ const InProgress = () => {
 
   return (
     <div className="max-w-4xl mx-auto bg-white p-6 shadow rounded">
-      <h2 className="text-xl font-bold mb-4 text-red-500">รายการที่กำลังดำเนินการ</h2>
+      <h2 className="text-xl font-bold mb-4 text-orange-500">รายการที่กำลังดำเนินการ</h2>
 
       {inProgressReports.length > 0 ? (
         <table className="w-full border">
           <thead>
-            <tr className="bg-gray-200">
+            <tr className="bg-gray-200 text-center">
               <th className="p-2">ชื่อ</th>
               <th className="p-2">เลขครุภัณฑ์</th>
               <th className="p-2">สำนัก/กอง</th>
@@ -43,12 +43,12 @@ const InProgress = () => {
           </thead>
           <tbody>
             {inProgressReports.map((item) => (
-              <tr key={item.id} className="border-t">
+              <tr key={item.id} className="border-t text-center">
                 <td className="p-2">{item.name}</td>
                 <td className="p-2">{item.parcelnumber}</td>
                 <td className="p-2">{item.office}</td>
                 <td className="p-2">{item.phone}</td>
-                <td className="p-2">{item.status}</td>
+                <td className="p-2 text-orange-500">{item.status}</td>
                 <td className="p-2">{item.issue}</td>
                 <td className="p-2">{item.details}</td>
               </tr>

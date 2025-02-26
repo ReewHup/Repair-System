@@ -30,7 +30,7 @@ const Pending = () => {
       <h2 className="text-xl font-bold mb-4 text-red-500">รายการที่รอซ่อม</h2>
 
       {pendingReports.length > 0 ? (
-        <table className="w-full border">
+        <table className="w-full border text-center">
           <thead>
             <tr className="bg-gray-200">
               <th className="p-2">ชื่อ</th>
@@ -44,12 +44,12 @@ const Pending = () => {
           </thead>
           <tbody>
             {pendingReports.map((report) => (
-              <tr key={report.id} className="border-t">
+              <tr key={report.id} className="border-t text-center">
                 <td className="p-2">{report.name}</td>
                 <td className="p-2">{report.parcelnumber}</td>
                 <td className="p-2">{report.office}</td>
                 <td className="p-2">{report.phone}</td>
-                <td className="p-2">{report.status}</td>
+                <td className="p-2 text-red-500">{report.status}</td>
                 <td className="p-2">{report.issue}</td>
                 <td className="p-2">{report.details}</td>
               </tr>

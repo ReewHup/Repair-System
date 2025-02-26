@@ -31,7 +31,7 @@ const Completed = () => {
       {completedReports.length > 0 ? (
         <table className="w-full border">
           <thead>
-            <tr className="bg-gray-200">
+            <tr className="bg-gray-200 text-center">
               <th className="p-2">ชื่อ</th>
               <th className="p-2">เลขครุภัณฑ์</th>
               <th className="p-2">สำนัก/กอง</th>
@@ -43,12 +43,12 @@ const Completed = () => {
           </thead>
           <tbody>
             {completedReports.map((item) => (
-              <tr key={item.id} className="border-t">
+              <tr key={item.id} className="border-t text-center">
                 <td className="p-2">{item.name}</td>
                 <td className="p-2">{item.parcelnumber}</td>
                 <td className="p-2">{item.office}</td>
                 <td className="p-2">{item.phone}</td>
-                <td className="p-2">{item.status}</td>
+                <td className="p-2 text-green-500">{item.status}</td>
                 <td className="p-2">{item.issue}</td>
                 <td className="p-2">{item.details}</td>
               </tr>

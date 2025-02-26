@@ -18,7 +18,7 @@ const AllReports = () => {
         <table className="w-full border">
           <thead>
             <tr className="bg-gray-200 text-center">
-              <th className="p-2 ">ชื่อ</th>
+              <th className="p-2">ชื่อ</th>
               <th className="p-2">เลขครุภัณฑ์</th>
               <th className="p-2">สำนัก/กอง</th>
               <th className="p-2">เบอร์โทร</th>
@@ -30,11 +30,23 @@ const AllReports = () => {
           <tbody>
             {reports.map((report) => (
               <tr key={report.id} className="border-t text-center">
-                <td className="p-2 ">{report.name}</td>
+                <td className="p-2">{report.name}</td>
                 <td className="p-2">{report.parcelnumber}</td>
                 <td className="p-2">{report.office}</td>
                 <td className="p-2">{report.phone}</td>
-                <td className="p-2">{report.status}</td>
+                <td
+                className={`p-2 font-bold ${
+                  report.status === "กำลังดำเนินการ"
+                    ? "text-orange-500"
+                    : report.status === "รอซ่อม"
+                    ? "text-red-500"
+                    : report.status === "ซ่อมเสร็จแล้ว"
+                    ? "text-green-500"
+                    : "text-gray-700"
+                }`}
+              >
+                {report.status}
+              </td>
                 <td className="p-2">{report.issue}</td>
                 <td className="p-2">{report.details}</td>
               </tr>
